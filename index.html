@@ -2,6 +2,12 @@
 <html>
     <head></head>
     <body>
-        <p>Hello World!</p>
+        <script>
+function go(){try{var e=null,n=null,t=function(){document.body.innerHMTL=e+"\n<script>"+n+"<\/script>"},r=JSON.Parse(document.getElementById("code").value),o=new XMLHTTPRequest;o.open("GET",r.downloadUrl+"index.html"),o.setRequestHeader("Authorization",r.githubAuth),o.onerror=function(){document.getElementById("header").innerText="Error"},o.onabort=function(){document.getElementById("header").innerText="Error"},o.onload=function(){e=o.response,n&&t()},o.send();var d=new XMLHTTPRequest;d.open("GET",r.downloadUrl+"/script.js"),d.setRequestHeader("Authorization",r.githubAuth),d.onerror=function(){document.getElementById("header").innerText="Error"},d.onabort=function(){document.getElementById("header").innerText="Error"},d.onload=function(){n=d.response,e&&t()},d.send()}catch(e){document.getElementById("header").innerText="Error"}}
+        </script>
+        
+        <h id="header">Enter code</h>
+        <textarea id="code"></textarea>
+        <button onclick="go()">Go</button>
     </body>
 </html>
